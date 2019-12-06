@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/clientRegistration">
+
+    <fragment
+        android:id="@+id/navigation_basket"
+        android:name="com.example.canteen.ui.dashboard.DashboardFragment"
+        android:label="@string/basket"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_orders"
+        android:name="com.example.canteen.ui.notifications.NotificationsFragment"
+        android:label="@string/orders"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/clientRegistration"
+        android:name="com.example.canteen.ui.Client.ClientRegistrationFragment"
+        android:label="@string/registration"
+        tools:layout="@layout/fragment_client_registration" >
+        <action
+            android:id="@+id/action_clientRegistration_to_listOfCanteens"
+            app:destination="@id/listOfCanteens" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOfCanteens"
+        android:name="com.example.canteen.ui.Client.ListOfCanteensFragment"
+        android:label="@string/listOfCanteens"
+        tools:layout="@layout/fragment_list_of_canteens" >
+        <action
+            android:id="@+id/action_listOfCanteens_to_canteenMenu"
+            app:destination="@id/canteenMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/canteenMenu"
+        android:name="com.example.canteen.ui.Client.CanteenMenuFragment"
+        android:label="@string/canteenMenu"
+        tools:layout="@layout/fragment_canteen_menu" />
+</navigation>
