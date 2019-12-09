@@ -18,4 +18,13 @@
     <string name="registration">Регистрация</string>
     <string name="listOfCanteens">Список столовых</string>
     <string name="canteenMenu">Меню</string>
+    <string name="dish">Блюдо</string>
+    <string name="PriceDish">Цена: </string>
+    <string name="AddToBasket">Добавить в корзину</string>
+    <string name="dishTitle">Название </string>
+    <string name="listOfOrders">Список заказов</string>
+    <string name="OrderInformation">Информация о заказе</string>
+    <string name="orderNumber">Номер заказа</string>
+    <string name="orderTime">Время заказа:</string>
+    <string name="dishCount">Количесто блюд:</string>
 </resources>

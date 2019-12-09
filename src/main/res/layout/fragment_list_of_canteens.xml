@@ -6,14 +6,6 @@
     android:orientation="vertical"
     tools:context=".ui.Client.ClientRegistrationFragment">
 
-<!--    <Button-->
-<!--        android:id="@+id/btn2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:text="Готово"-->
-<!--        />-->
-
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

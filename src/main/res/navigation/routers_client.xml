@@ -39,5 +39,14 @@
         android:id="@+id/canteenMenu"
         android:name="com.example.canteen.ui.Client.CanteenMenuFragment"
         android:label="@string/canteenMenu"
-        tools:layout="@layout/fragment_canteen_menu" />
+        tools:layout="@layout/fragment_canteen_menu" >
+        <action
+            android:id="@+id/action_canteenMenu_to_dishFragment"
+            app:destination="@id/dishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dishFragment"
+        android:name="com.example.canteen.ui.Client.DishFragment"
+        android:label="@string/dish"
+        tools:layout="@layout/fragment_dish" />
 </navigation>
