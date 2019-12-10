@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
     childColumns = ["Canteen_Id"])])
 data class Dish(
     @PrimaryKey(autoGenerate = true)
-    val Id: Int,
+    val Id: Int? = null,
     val Title: String,
     val Price: Int,
     val Canteen_Id: Int

@@ -10,16 +10,16 @@ import com.example.canteen.Repository.CanteenRepository
 import kotlinx.coroutines.launch
 
 class CanteenViewModel(application: Application): AndroidViewModel(application){
-    private val repository: CanteenRepository
-    val allCanteens: LiveData<List<Canteen>>
+  private val repository: CanteenRepository
+  val allCanteens: LiveData<List<Canteen>>
 
-    init {
-        val canteenDao = AppDatabase.getDatabase(application, viewModelScope).canteenDao()
-        repository = CanteenRepository(canteenDao)
-        allCanteens = repository.allCanteen
-    }
+  init {
+    val canteenDao = AppDatabase.getDatabase(application, viewModelScope).canteenDao()
+    repository = CanteenRepository(canteenDao)
+    allCanteens = repository.allCanteen
+  }
 
-    fun insert(canteen: Canteen) = viewModelScope.launch {
-        repository.insert(canteen)
-    }
+  fun insert(canteen: Canteen) = viewModelScope.launch {
+    repository.insert(canteen)
+  }
 }

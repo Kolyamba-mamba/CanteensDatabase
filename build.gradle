@@ -75,7 +75,7 @@ dependencies {
     def archLifecycleVersion = '2.2.0-rc02'
     def androidxArchVersion = '2.1.0'
     implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
-    kapt "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion"
+//    kapt "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion"
     androidTestImplementation "androidx.arch.core:core-testing:$androidxArchVersion"
 
 // ViewModel Kotlin support

@@ -5,10 +5,10 @@ import com.example.canteen.DAO.CanteenDao
 import com.example.canteen.Entity.Canteen
 
 class CanteenRepository(private val canteenDao: CanteenDao){
-    val allCanteen: LiveData<List<Canteen>> = canteenDao.getAllCanteens()
+  val allCanteen: LiveData<List<Canteen>> = canteenDao.getAllCanteens()
 
 
-    suspend fun insert(canteen: Canteen){
-        canteenDao.insertCanteen(canteen)
-    }
+  suspend fun insert(canteen: Canteen){
+    canteenDao.insertCanteen(canteen)
+  }
 }

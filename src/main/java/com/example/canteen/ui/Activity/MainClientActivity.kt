@@ -13,23 +13,23 @@ import com.example.canteen.R
 
 class MainClientActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_client)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main_client)
+    val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        val navController = findNavController(R.id.nav_client_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_basket,
-                R.id.navigation_orders
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
-    }
+    val navController = findNavController(R.id.nav_client_fragment)
+    // Passing each menu ID as a set of Ids because each
+    // menu should be considered as top level destinations.
+    val appBarConfiguration = AppBarConfiguration(
+      setOf(
+        R.id.navigation_basket,
+        R.id.navigation_orders
+      )
+    )
+    setupActionBarWithNavController(navController, appBarConfiguration)
+    navView.setupWithNavController(navController)
+  }
 
 
 }

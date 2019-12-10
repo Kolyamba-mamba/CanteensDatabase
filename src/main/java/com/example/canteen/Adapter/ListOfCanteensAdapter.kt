@@ -1,5 +1,6 @@
 package com.example.canteen.Adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,8 +27,9 @@ class ListOfCanteensAdapter internal constructor(val context: FragmentActivity?)
 
   override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
     holder.itemView.setOnClickListener {view ->
-      view.findNavController().navigate(R.id.canteenMenu)
-      println(canteens[position].Id)
+      val bundle = Bundle()
+      bundle.putInt("arg", canteens[position].Id!!)
+      view.findNavController().navigate(R.id.canteenMenu, bundle)
     }
 
     holder.title.text = canteens[position].Title

@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Courier (
-    @PrimaryKey(autoGenerate = true)
-    val Id: Int,
-    val FullName: String,
-    val Transport: String
+  @PrimaryKey(autoGenerate = true)
+  val Id: Int,
+  val FullName: String,
+  val Transport: String
 )

@@ -26,7 +26,6 @@ class ListOfCanteensFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val fragment = inflater.inflate(R.layout.fragment_list_of_canteens, container, false)
-        val navController = NavHostFragment.findNavController(this)
         val recyclerView = fragment.findViewById<RecyclerView>(R.id.rvCanteens)
         val adapter = ListOfCanteensAdapter(activity)
         recyclerView.adapter = adapter

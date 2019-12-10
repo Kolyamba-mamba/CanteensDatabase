@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Client"
-        />
+            />
 
         <Button
             android:id="@+id/btnWorker"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Worker"
             android:layout_marginTop="@dimen/marginButtonMainAct"
-        />
+            />
 
     </LinearLayout>
 

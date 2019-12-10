@@ -8,9 +8,9 @@ import com.example.canteen.Entity.Canteen
 
 @Dao
 interface CanteenDao{
-    @Query("SELECT * from Canteen")
-    fun getAllCanteens():LiveData<List<Canteen>>
+  @Query("SELECT * from Canteen")
+  fun getAllCanteens():LiveData<List<Canteen>>
 
-    @Insert
-    suspend fun insertCanteen(canteen: Canteen)
+  @Insert
+  suspend fun insertCanteen(canteen: Canteen)
 }
