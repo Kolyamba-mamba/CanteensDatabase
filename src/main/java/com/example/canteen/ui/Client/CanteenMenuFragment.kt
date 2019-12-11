@@ -32,8 +32,7 @@ class CanteenMenuFragment : Fragment() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val canteenId = arguments!!.getInt("arg")
-        println(canteenId)
+        val canteenId = arguments!!.getInt("canteenId")
 
         val factory = MenuViewModel.MyFactory(requireActivity().application,canteenId)
 

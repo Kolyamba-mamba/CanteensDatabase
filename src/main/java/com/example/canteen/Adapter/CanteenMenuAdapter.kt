@@ -29,8 +29,10 @@ class CanteenMenuAdapter internal constructor(val context: FragmentActivity?):
 
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     holder.itemView.setOnClickListener{view ->
-      view.findNavController().navigate(R.id.dishFragment)
-      print(menu[position].Id)
+      val bundle = Bundle()
+      bundle.putString("dishTitle", menu[position].Title)
+      bundle.putInt("dishPrice", menu[position].Price)
+      view.findNavController().navigate(R.id.dishFragment, bundle)
     }
     holder.title.text = menu[position].Title
     holder.price.text = menu[position].Price.toString()

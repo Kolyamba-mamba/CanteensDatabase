@@ -28,7 +28,7 @@ class ListOfCanteensAdapter internal constructor(val context: FragmentActivity?)
   override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
     holder.itemView.setOnClickListener {view ->
       val bundle = Bundle()
-      bundle.putInt("arg", canteens[position].Id!!)
+      bundle.putInt("canteenId", canteens[position].Id!!)
       view.findNavController().navigate(R.id.canteenMenu, bundle)
     }
 
