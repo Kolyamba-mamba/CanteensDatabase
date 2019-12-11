@@ -50,38 +50,63 @@ abstract class AppDatabase: RoomDatabase(){
     }
 
     suspend fun populateDatabase(canteenDao: CanteenDao, menuDao: MenuDao) {
-      var canteen = Canteen(Title = "100ловая",PhoneNumber = "8-800-555-35-35",
-        Address = "ул.Пушкина д.22",WorkingHours = "8.00-23.00")
+      var canteen = Canteen(
+        Title = "100ловая", PhoneNumber = "8-800-555-35-35",
+        Address = "ул.Пушкина д.22", WorkingHours = "8.00-23.00"
+      )
       canteenDao.insertCanteen(canteen)
-      canteen = Canteen(Title = "Ложка",PhoneNumber = "8-888-777-66-55",
-        Address = "ул.Абрамова д.13",WorkingHours = "7.00-23.00")
+      canteen = Canteen(
+        Title = "Ложка", PhoneNumber = "8-888-777-66-55",
+        Address = "ул.Абрамова д.13", WorkingHours = "7.00-23.00"
+      )
       canteenDao.insertCanteen(canteen)
-      canteen = Canteen(Title = "Вкусно",PhoneNumber = "8-927-367-77-27",
-        Address = "ул.Ложкина д.11",WorkingHours = "9.00-20.00")
+      canteen = Canteen(
+        Title = "Вкусно", PhoneNumber = "8-927-367-77-27",
+        Address = "ул.Ложкина д.11", WorkingHours = "9.00-20.00"
+      )
       canteenDao.insertCanteen(canteen)
-      canteen = Canteen(Title = "Гурман",PhoneNumber = "8-917-767-11-22",
-        Address = "ул.Колотушкина д.82",WorkingHours = "Круглосуточно")
+      canteen = Canteen(
+        Title = "Гурман", PhoneNumber = "8-917-767-11-22",
+        Address = "ул.Колотушкина д.82", WorkingHours = "Круглосуточно"
+      )
       canteenDao.insertCanteen(canteen)
-      canteen = Canteen(Title = "Одесса",PhoneNumber = "8-800-135-14-88",
-        Address = "ул.Одессы д.2",WorkingHours = "9.00-21.00")
+      canteen = Canteen(
+        Title = "Одесса", PhoneNumber = "8-800-135-14-88",
+        Address = "ул.Одессы д.2", WorkingHours = "9.00-21.00"
+      )
       canteenDao.insertCanteen(canteen)
+      val listDishesCanteen1: List<String> = listOf("Рис", "Гречка", "Картошка пюре",
+        "Картофель по-деревенски","Пшенная каша","Плов","Котлета куриная",
+        "Котлета по-Киевски", "Котлета рыбная","Котлета мясная","Лапша", "Борщ", "Грибной суп")
 
-      var dish = Dish(Title = "Рис", Price = 15, Canteen_Id = 1)
-      menuDao.insertDishInMenu(dish)
-      dish = Dish(Title = "Гречка", Price = 14, Canteen_Id = 1)
-      menuDao.insertDishInMenu(dish)
-      dish = Dish(Title = "Плов с курицей", Price = 50, Canteen_Id = 2)
-      menuDao.insertDishInMenu(dish)
-      dish = Dish(Title = "Омлет", Price = 30, Canteen_Id = 2)
-      menuDao.insertDishInMenu(dish)
-      dish = Dish(Title = "Картошка пюре", Price = 20, Canteen_Id = 1)
-      menuDao.insertDishInMenu(dish)
-      dish = Dish(Title = "Котлета куриная", Price = 25, Canteen_Id = 1)
-      menuDao.insertDishInMenu(dish)
-      dish = Dish(Title = "Пицца", Price = 60, Canteen_Id = 2)
-      menuDao.insertDishInMenu(dish)
-      dish = Dish(Title = "Лапша", Price = 40, Canteen_Id = 1)
-      menuDao.insertDishInMenu(dish)
+      val listDishesCanteen2: List<String> = listOf("Каша овсянная","Каша гречневая",
+        "Каша гречневая с молоком", "Картофель по-домашнему", "Плов с курицей",
+        "Яичница", "Омлет", "Пицца", "Супчик по-Домашнему", "Щи")
+
+      val listDishesCanteen3: List<String> = listOf("Гречка царская", "Картошка вкуснейшая",
+        "Картофель фри", "Запеканка", "Гуляш", "Жареная рыба", "Суп гороховый",
+        "Суп с фрикадельками")
+
+      val listDishesCanteen4: List<String> = listOf("Перловка", "Манка",
+        "Макароны", "Отбивная куриная", "Отбивная говяжья", "Филе индейки", "Цыпленок",
+        "Селедка под шубой", "Оливье")
+
+      val listDishesCanteen5: List<String> = listOf("Макароны", "Картошка пюре",
+        "Печеный картовель", "Печень куриная", "Паштет", "Жаркое", "Солянка",
+        "Рассольник")
+
+      val listAllDish = listOf(listDishesCanteen1,listDishesCanteen2,
+        listDishesCanteen3, listDishesCanteen4, listDishesCanteen5)
+
+      var dish: Dish
+
+      for (i in 0..4){
+        for (j in listAllDish[i]){
+          dish = Dish(Title = j, Price = (35..100).random(), Canteen_Id = i+1)
+          menuDao.insertDishInMenu(dish)
+        }
+
+      }
     }
   }
 }
