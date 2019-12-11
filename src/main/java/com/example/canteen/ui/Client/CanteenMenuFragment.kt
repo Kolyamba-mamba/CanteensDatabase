@@ -1,6 +1,7 @@
 package com.example.canteen.ui.Client
 
 
+import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -34,7 +35,9 @@ class CanteenMenuFragment : Fragment() {
         val canteenId = arguments!!.getInt("arg")
         println(canteenId)
 
-        menuViewModel = ViewModelProvider(this).get(MenuViewModel::class.java)
+        val factory = MenuViewModel.MyFactory(requireActivity().application,canteenId)
+
+        menuViewModel = ViewModelProvider(this, factory).get(MenuViewModel::class.java)
 
         menuViewModel.dishes.observe(viewLifecycleOwner, Observer { dishes ->
             dishes?.let { adapter.setMenu(it) }
