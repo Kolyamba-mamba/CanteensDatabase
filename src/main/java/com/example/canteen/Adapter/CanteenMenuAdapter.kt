@@ -1,6 +1,5 @@
 package com.example.canteen.Adapter
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +31,7 @@ class CanteenMenuAdapter internal constructor(val context: FragmentActivity?):
       val bundle = Bundle()
       bundle.putString("dishTitle", menu[position].Title)
       bundle.putInt("dishPrice", menu[position].Price)
+      bundle.putInt("dishId", menu[position].Id!!)
       view.findNavController().navigate(R.id.dishFragment, bundle)
     }
     holder.title.text = menu[position].Title

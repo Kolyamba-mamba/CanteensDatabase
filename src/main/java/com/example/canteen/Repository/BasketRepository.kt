@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import com.example.canteen.DAO.MenuDao
 import com.example.canteen.Entity.Dish
 
-class MenuRepository (menuDao: MenuDao, canteenId: Int){
-    val allDishes: LiveData<List<Dish>> = menuDao.getDishFromCanteen(canteenId)
-
+class BasketRepository(menuDao: MenuDao, dishesId: Set<Int>){
+    val dishes: LiveData<List<Dish>> = menuDao.getDish(dishesId)
 }

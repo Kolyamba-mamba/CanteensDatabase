@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/clientRegistration">
+    app:startDestination="@id/listOfCanteens">
 
     <fragment
         android:id="@+id/navigation_basket"
-        android:name="com.example.canteen.ui.dashboard.DashboardFragment"
+        android:name="com.example.canteen.ui.Client.BasketFragment"
         android:label="@string/basket"
         tools:layout="@layout/fragment_dashboard" />
 
@@ -17,15 +17,6 @@
         android:label="@string/orders"
         tools:layout="@layout/fragment_notifications" />
 
-    <fragment
-        android:id="@+id/clientRegistration"
-        android:name="com.example.canteen.ui.Client.ClientRegistrationFragment"
-        android:label="@string/registration"
-        tools:layout="@layout/fragment_client_registration" >
-        <action
-            android:id="@+id/action_clientRegistration_to_listOfCanteens"
-            app:destination="@id/listOfCanteens" />
-    </fragment>
     <fragment
         android:id="@+id/listOfCanteens"
         android:name="com.example.canteen.ui.Client.ListOfCanteensFragment"

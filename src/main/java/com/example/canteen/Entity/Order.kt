@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey
   ForeignKey(entity = Client::class, parentColumns = ["Id"], childColumns = ["Client_Id"])])
 data class Order (
   @PrimaryKey(autoGenerate = true)
-  val Id: Int,
+  val Id: Int? = null,
   val OrderTime: String,
   val QuantityDish: Int,
   val Status: String,

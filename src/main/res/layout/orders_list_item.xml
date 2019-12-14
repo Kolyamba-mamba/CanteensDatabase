@@ -39,31 +39,6 @@
         </LinearLayout>
     </FrameLayout>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="@string/dishCount"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvCountDish"
-                android:textSize="18sp"
-                />
-        </LinearLayout>
-
-
-    </FrameLayout>
     <View
         android:id="@+id/view1"
         android:layout_width="wrap_content"

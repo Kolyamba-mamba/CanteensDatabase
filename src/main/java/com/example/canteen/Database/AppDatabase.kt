@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.canteen.DAO.CanteenDao
 import com.example.canteen.DAO.MenuDao
+import com.example.canteen.DAO.OrderDao
 import com.example.canteen.Entity.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -17,6 +18,7 @@ import kotlinx.coroutines.launch
 abstract class AppDatabase: RoomDatabase(){
   abstract fun canteenDao():CanteenDao
   abstract fun menuDao():MenuDao
+  abstract fun orderDao():OrderDao
 
   companion object{
     @Volatile

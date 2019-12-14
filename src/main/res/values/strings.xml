@@ -28,4 +28,6 @@
     <string name="orderTime">Время заказа:</string>
     <string name="dishCount">Количесто блюд:</string>
     <string name="ruble">руб</string>
+    <string name="basketIsNull">Ваша корзина пуста</string>
+    <string name="goToOrderRegistration">К оформлению заказа</string>
 </resources>
