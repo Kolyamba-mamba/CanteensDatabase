@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.canteen.Adapter.BasketAdapter
@@ -14,7 +15,6 @@ import com.example.canteen.BasketSingleton
 import com.example.canteen.R
 import com.example.canteen.ViewModel.BasketViewModel
 import kotlinx.android.synthetic.main.fragment_basket.view.*
-import kotlinx.android.synthetic.main.fragment_dish.view.*
 
 class BasketFragment : Fragment() {
 
@@ -28,26 +28,37 @@ class BasketFragment : Fragment() {
         val fragment = inflater.inflate(R.layout.fragment_basket, container, false)
         val recyclerView = fragment.findViewById<RecyclerView>(R.id.rvListInBasket)
         val adapter = BasketAdapter(activity)
+        val navController = NavHostFragment.findNavController(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
 
 
         if(BasketSingleton.arrayOfDishId.size > 0){
+            notEmptyFragment(fragment)
+
             basketViewModel = ViewModelProvider(this).get(BasketViewModel::class.java)
 
             basketViewModel.dishes.observe(viewLifecycleOwner, Observer { dishes ->
                 dishes?.let { adapter.setDishInBasket(it) }
             })
 
-            fragment.btGoToOrderRegistration.visibility = View.VISIBLE
-            fragment.tvBasketIsNull.visibility = View.GONE
+            fragment.btnGoToOrderRegistration.setOnClickListener{
+                navController.navigate(R.id.clientRegistrationFragment)
+            }
         }
-        else{
-            fragment.btGoToOrderRegistration.visibility = View.GONE
-            fragment.tvBasketIsNull.visibility = View.VISIBLE
-        }
+        else emptyFragment(fragment)
 
         return fragment
+    }
+
+    private fun notEmptyFragment(fragment: View){
+        fragment.btnGoToOrderRegistration.visibility = View.VISIBLE
+        fragment.tvBasketIsNull.visibility = View.GONE
+    }
+
+    private fun emptyFragment(fragment: View){
+        fragment.btnGoToOrderRegistration.visibility = View.GONE
+        fragment.tvBasketIsNull.visibility = View.VISIBLE
     }
 }

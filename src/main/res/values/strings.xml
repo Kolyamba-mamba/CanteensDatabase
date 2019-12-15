@@ -6,6 +6,7 @@
     <string name="basket">Корзина</string>
     <string name="orders">Заказы</string>
     <string name="exit">Выход</string>
+    <string name="orderRegistration">Оформление заказа</string>
     <string name="title_activity_main_client">MainClientActivity</string>
     <string name="title_home">Home</string>
     <string name="Client">Клиент</string>
@@ -30,4 +31,5 @@
     <string name="ruble">руб</string>
     <string name="basketIsNull">Ваша корзина пуста</string>
     <string name="goToOrderRegistration">К оформлению заказа</string>
+    <string name="order">Оформить заказ</string>
 </resources>

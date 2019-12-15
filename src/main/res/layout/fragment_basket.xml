@@ -24,7 +24,7 @@
         />
 
     <Button
-        android:id="@+id/btGoToOrderRegistration"
+        android:id="@+id/btnGoToOrderRegistration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text = "@string/goToOrderRegistration"

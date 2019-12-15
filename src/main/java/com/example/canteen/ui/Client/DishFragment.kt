@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.canteen.BasketSingleton
 import com.example.canteen.R
 import kotlinx.android.synthetic.main.fragment_dish.view.*
@@ -22,6 +23,8 @@ class DishFragment : Fragment() {
         // Inflate the layout for this fragment
         val fragment = inflater.inflate(R.layout.fragment_dish, container, false)
 
+        var toast: Toast
+
         val dishTitle = arguments!!.getString("dishTitle")
         val dishPrice = arguments!!.getInt("dishPrice")
         val dishId = arguments!!.getInt("dishId")
@@ -31,7 +34,9 @@ class DishFragment : Fragment() {
 
         fragment.btnAddToBasket.setOnClickListener{
             BasketSingleton.arrayOfDishId.add(dishId)
-            println(BasketSingleton.arrayOfDishId)
+            toast = Toast.makeText(context, "Блюдо добвалено в корзину!\n" +
+                    "Блюд в корзине:  ${BasketSingleton.arrayOfDishId.size}.",Toast.LENGTH_LONG)
+            toast.show()
         }
 
         return fragment

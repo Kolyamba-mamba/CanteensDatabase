@@ -41,9 +41,6 @@ class CanteenMenuFragment : Fragment() {
         menuViewModel.dishes.observe(viewLifecycleOwner, Observer { dishes ->
             dishes?.let { adapter.setMenu(it) }
         })
-
         return fragment
     }
-
-
 }
