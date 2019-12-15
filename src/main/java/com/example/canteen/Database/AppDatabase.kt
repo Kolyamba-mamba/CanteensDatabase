@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.canteen.DAO.CanteenDao
+import com.example.canteen.DAO.ClientDao
 import com.example.canteen.DAO.MenuDao
 import com.example.canteen.DAO.OrderDao
 import com.example.canteen.Entity.*
@@ -19,6 +20,7 @@ abstract class AppDatabase: RoomDatabase(){
   abstract fun canteenDao():CanteenDao
   abstract fun menuDao():MenuDao
   abstract fun orderDao():OrderDao
+  abstract fun clientDao():ClientDao
 
   companion object{
     @Volatile
