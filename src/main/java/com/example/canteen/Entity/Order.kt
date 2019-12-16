@@ -9,13 +9,12 @@ import androidx.room.PrimaryKey
   ForeignKey(entity = Courier::class, parentColumns = ["Id"], childColumns = ["Courier_Id"]),
   ForeignKey(entity = Client::class, parentColumns = ["Id"], childColumns = ["Client_Id"])])
 data class Order (
-  @PrimaryKey(autoGenerate = true)
-  val Id: Int? = null,
+  @PrimaryKey(autoGenerate = true) val Id: Int? = null,
   val OrderTime: String,
-  val QuantityDish: Int,
-  val Status: String,
-  val AmountPayable: Int,
-  val CanteenWorker_Id: Int,
-  val Courier_Id: Int,
-  val Client_Id: Int
+  val QuantityDish: Int? = null,
+  val Status: String? = null,
+  val AmountPayable: Int? = null,
+  val CanteenWorker_Id: Int? = null,
+  val Courier_Id: Int? = null,
+  val Client_Id: Int? = null
 )

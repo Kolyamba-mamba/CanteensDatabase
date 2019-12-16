@@ -1,10 +1,12 @@
 package com.example.canteen.Adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.canteen.Entity.Order
 import com.example.canteen.R
@@ -29,6 +31,9 @@ class ListOfOrdersAdapter internal constructor(val context: FragmentActivity?):
 
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
+        holder.itemView.setOnClickListener{view ->
+            view.findNavController().navigate(R.id.orderInformationFragment)
+        }
         holder.orderNumber.text = orders[position].Id.toString()
         holder.orderTime.text = orders[position].OrderTime
     }
@@ -38,4 +43,8 @@ class ListOfOrdersAdapter internal constructor(val context: FragmentActivity?):
         val orderTime: TextView = view.tvTime
     }
 
+    fun setOrders(orders: List<Order>){
+        this.orders = orders
+        notifyDataSetChanged()
+    }
 }

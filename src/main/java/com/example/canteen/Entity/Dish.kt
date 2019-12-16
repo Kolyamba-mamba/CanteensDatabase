@@ -7,8 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(foreignKeys = [ForeignKey(entity = Canteen::class, parentColumns = ["Id"],
     childColumns = ["Canteen_Id"])])
 data class Dish(
-    @PrimaryKey(autoGenerate = true)
-    val Id: Int? = null,
+    @PrimaryKey(autoGenerate = true) val Id: Int? = null,
     val Title: String,
     val Price: Int,
     val Canteen_Id: Int
