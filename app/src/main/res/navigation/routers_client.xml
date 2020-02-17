@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/listOfCanteens">
+
+    <fragment
+        android:id="@+id/navigation_basket"
+        android:name="com.example.canteen.ui.Client.BasketFragment"
+        android:label="@string/basket"
+        tools:layout="@layout/fragment_basket" >
+        <action
+            android:id="@+id/action_navigation_basket_to_clientRegistrationFragment"
+            app:destination="@id/clientRegistrationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_orders"
+        android:name="com.example.canteen.ui.notifications.NotificationsFragment"
+        android:label="@string/orders"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/listOfCanteens"
+        android:name="com.example.canteen.ui.Client.ListOfCanteensFragment"
+        android:label="@string/listOfCanteens"
+        tools:layout="@layout/fragment_list_of_canteens" >
+        <action
+            android:id="@+id/action_listOfCanteens_to_canteenMenu"
+            app:destination="@id/canteenMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/canteenMenu"
+        android:name="com.example.canteen.ui.Client.CanteenMenuFragment"
+        android:label="@string/canteenMenu"
+        tools:layout="@layout/fragment_canteen_menu" >
+        <action
+            android:id="@+id/action_canteenMenu_to_dishFragment"
+            app:destination="@id/dishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dishFragment"
+        android:name="com.example.canteen.ui.Client.DishFragment"
+        android:label="@string/dish"
+        tools:layout="@layout/fragment_dish" />
+    <fragment
+        android:id="@+id/clientRegistrationFragment"
+        android:name="com.example.canteen.ui.Client.ClientRegistrationFragment"
+        android:label="@string/orderRegistration"
+        tools:layout="@layout/fragment_client_registration" />
+</navigation>
